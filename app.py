@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "Weather Prediction API (User-Friendly)"}
+    return {"message": "Weather Prediction API (condition_text based)"}
 
 
 class WeatherInput(BaseModel):

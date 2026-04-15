@@ -27,9 +27,9 @@ temp_model.fit(X_train, y_temp_train)
 cond_model = RandomForestClassifier(n_estimators=100)
 cond_model.fit(X_train, y_cond_train)
 
-# Save
+# Save models
 joblib.dump(temp_model, "temp_model.pkl")
 joblib.dump(cond_model, "cond_model.pkl")
 joblib.dump(encoder, "encoder.pkl")
 
-print("✅ Models trained successfully!")
+print("✅ Models + Encoder trained successfully!")

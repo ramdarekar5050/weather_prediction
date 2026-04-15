@@ -7,8 +7,7 @@ API_URL = "http://127.0.0.1:8000"
 st.set_page_config(page_title="Weather AI", layout="wide")
 
 st.title("🌦️ AI Weather Prediction Dashboard")
-
-st.write("Predict next day's weather using simple inputs")
+st.write("Predict weather using simple inputs (no complex parameters)")
 
 col1, col2 = st.columns(2)
 
@@ -34,10 +33,14 @@ if st.button("🔮 Predict"):
     if res.status_code == 200:
         data = res.json()
 
-        st.metric("🌡️ Predicted Temperature", f"{data['predicted_temperature']} °C")
-        st.success(f"🌤️ Condition: {data['predicted_condition']}")
+        col1, col2 = st.columns(2)
 
-        # Graph
+        with col1:
+            st.metric("🌡️ Temperature", f"{data['predicted_temperature']} °C")
+
+        with col2:
+            st.success(f"🌤️ {data['predicted_condition']}")
+
         st.subheader("📈 Temperature Trend")
 
         df = pd.DataFrame({
@@ -46,3 +49,6 @@ if st.button("🔮 Predict"):
         })
 
         st.line_chart(df.set_index("Day"))
+
+    else:
+        st.error("Prediction failed")
