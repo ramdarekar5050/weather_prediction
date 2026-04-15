@@ -127,8 +127,5 @@ CMD [\"streamlit\", \"run\", \"dashboard.py\"]
 ## 📄 License
 MIT - Use freely!
 
----
 
-**Built with ❤️ for simple, accurate weather predictions**  
-**Try it now → 4 inputs → Instant AI forecast!** ✨
 
