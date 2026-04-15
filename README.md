@@ -123,9 +123,3 @@ CMD [\"streamlit\", \"run\", \"dashboard.py\"]
 2. `pip install -r requirements.txt`
 3. Train: `python train.py`
 4. Add features → PR!
-
-## 📄 License
-MIT - Use freely!
-
-
-
